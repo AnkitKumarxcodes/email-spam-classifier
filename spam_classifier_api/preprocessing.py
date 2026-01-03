@@ -2,15 +2,17 @@ import string
 import nltk
 
 def download_nltk_resources():
-    try:
-        nltk.data.find('corpora/stopwords')
-    except LookupError:
-        nltk.download('stopwords')
+    resources = [
+        ("corpora/stopwords", "stopwords"),
+        ("tokenizers/punkt", "punkt"),
+        ("tokenizers/punkt_tab", "punkt_tab"),
+    ]
 
-    try:
-        nltk.data.find('tokenizers/punkt')
-    except LookupError:
-        nltk.download('punkt')
+    for path, name in resources:
+        try:
+            nltk.data.find(path)
+        except LookupError:
+            nltk.download(name)
 
 download_nltk_resources()
 
