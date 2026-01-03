@@ -42,7 +42,8 @@ streamlit run streamlit_app.py
 cd spam_classifier_api
 uvicorn app:app --reload
 
-http://127.0.0.1:8000/docs
+https://email-spam-classifier-th2v.onrender.com/docs
 ```
+
 
 
