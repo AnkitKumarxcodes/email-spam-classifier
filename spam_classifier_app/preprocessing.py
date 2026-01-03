@@ -1,20 +1,24 @@
+import string
 import nltk
 
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+def download_nltk_resources():
+    try:
+        nltk.data.find('corpora/stopwords')
+    except LookupError:
+        nltk.download('stopwords')
 
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
-import string
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')
+
+download_nltk_resources()
+
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
 
-
-stopwords.words('english')
+STOPWORDS = set(stopwords.words('english'))
 ps = PorterStemmer()
 
 def preprocess_text(text: str) -> str:
