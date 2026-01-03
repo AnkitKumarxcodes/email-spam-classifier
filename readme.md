@@ -36,6 +36,7 @@ EMAIL_SPAM_CLASSIFIER_PROJECT/
 ```bash
 cd spam_classifier_app
 streamlit run streamlit_app.py
+https://email-spam-classification-app.onrender.com
 ```
 ### FastAPI API
 ```
@@ -44,6 +45,7 @@ uvicorn app:app --reload
 
 https://email-spam-classifier-th2v.onrender.com/docs
 ```
+
 
 
 
