@@ -1,9 +1,21 @@
 import string
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 stopwords.words('english')
 ps = PorterStemmer()
+
+import nltk
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 
 def preprocess_text(text: str) -> str:
     text = text.lower()
